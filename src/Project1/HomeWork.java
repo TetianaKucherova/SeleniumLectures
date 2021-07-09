@@ -46,21 +46,21 @@ System.out.println ( "______________________________________Signup______________
 System.out.println ( "_________________________________Fill out the form _______________________________   done "    );
 /*4.     Fill out the form with the required info*/
 
-         String userName="xxxxxxxxxxxxxxxx";
+         String userName="xxxxxxxxxxxxxxxxx";
          WebElement inputBox = driver.findElement ( By.name("username"));
          inputBox.sendKeys(userName);
 
-         String firstName="xxxxxxxxxxxxxxxx";
+         String firstName="xxxxxxxxxxxxxxxxx";
          driver.findElement ( By.name("firstName")).sendKeys(firstName);
 
-         String lastName="xxxxxxxxxxxxxxxxx";
+         String lastName="xxxxxxxxxxxxxxxxxx";
          driver.findElement ( By.name("lastName")).sendKeys(lastName);
 
 
-         String email="xxxxxxxxxxxx@gmail.com";
+         String email="xxxxxxxxxxxxx@gmail.com";
          driver.findElement ( By.name("email")).sendKeys(email);
 
-         String email2="xxxxxxxxxxxx@gmail.com";
+         String email2="xxxxxxxxxxxxx@gmail.com";
          driver.findElement ( By.name("email2")).sendKeys(email2);
 
          String password="123tK56789";
@@ -89,7 +89,7 @@ System.out.println ( "_________________verify that your first and last name matc
 /*7.    In the left navigation bar, verify that your first and last name matches the first and last name that you used when signing up. */
 
         String HTMLCode= driver.getPageSource();
-        assertTrue (HTMLCode.contains ("Xxxxxxxxxxxxxxxx Xxxxxxxxxxxxxxxx") );
+        assertTrue (HTMLCode.contains ("Xxxxxxxxxxxxxxxxx Xxxxxxxxxxxxxxxxx") );
 
 
 System.out.println ( "_____________________username on the main window is correct_______________________   done ");
@@ -100,7 +100,7 @@ System.out.println ( "_____________________username on the main window is correc
 /*????driver.findElement ( By.tagName ( "h1" ) ).getText ( );
         WebElement h2 = driver.findElement( By.className ("section-header"));
         System.out.println (h2.getText() );*/
-        assertTrue (HTMLCode.contains ("Xxxxxxxxxxxxxxxx Xxxxxxxxxxxxxxxx") );
+        assertTrue (HTMLCode.contains ("Xxxxxxxxxxxxxxxxx Xxxxxxxxxxxxxxxxx") );
 /*????*/
         driver.findElement( By.id("rafael")).click();
 
