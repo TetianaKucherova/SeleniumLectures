@@ -46,21 +46,21 @@ System.out.println ( "______________________________________Signup______________
 System.out.println ( "_________________________________Fill out the form _______________________________   done "    );
 /*4.     Fill out the form with the required info*/
 
-         String userName="xxxxxxxxxx";
+         String userName="xxxxxxxxxxxxxxxx";
          WebElement inputBox = driver.findElement ( By.name("username"));
          inputBox.sendKeys(userName);
 
-         String firstName="xxxxxxxxxx";
+         String firstName="xxxxxxxxxxxxxxxx";
          driver.findElement ( By.name("firstName")).sendKeys(firstName);
 
-         String lastName="xxxxxxxxxx";
+         String lastName="xxxxxxxxxxxxxxxxx";
          driver.findElement ( By.name("lastName")).sendKeys(lastName);
 
 
-         String email="xxxxxx@gmail.com";
+         String email="xxxxxxxxxxxx@gmail.com";
          driver.findElement ( By.name("email")).sendKeys(email);
 
-         String email2="xxxxxx@gmail.com";
+         String email2="xxxxxxxxxxxx@gmail.com";
          driver.findElement ( By.name("email2")).sendKeys(email2);
 
          String password="123tK56789";
@@ -78,7 +78,7 @@ System.out.println ( "_________________________________Click on Sign up_________
 
 
 
-System.out.println ( "_______________________________Verify that the URL________________________________   done ");
+System.out.println ( "__________________________________Verify the URL__________________________________   done ");
 /*6.    Once logged in to the application, verify that the URL is http : //duotifyapp.us-east-2.elasticbeanstalk.com/browse.php?. */
         /*???*/driver.get("http://duotifyapp.us-east-2.elasticbeanstalk.com/browse.php?");
         String currentUrl1 = driver.getCurrentUrl ();//retrieves the current URL
@@ -89,7 +89,7 @@ System.out.println ( "_________________verify that your first and last name matc
 /*7.    In the left navigation bar, verify that your first and last name matches the first and last name that you used when signing up. */
 
         String HTMLCode= driver.getPageSource();
-        assertTrue (HTMLCode.contains ("Xxxxxxxxxx Xxxxxxxxxx") );
+        assertTrue (HTMLCode.contains ("Xxxxxxxxxxxxxxxx Xxxxxxxxxxxxxxxx") );
 
 
 System.out.println ( "_____________________username on the main window is correct_______________________   done ");
@@ -100,7 +100,7 @@ System.out.println ( "_____________________username on the main window is correc
 /*????driver.findElement ( By.tagName ( "h1" ) ).getText ( );
         WebElement h2 = driver.findElement( By.className ("section-header"));
         System.out.println (h2.getText() );*/
-        assertTrue (HTMLCode.contains ("Xxxxxxxxxx Xxxxxxxxxx") );
+        assertTrue (HTMLCode.contains ("Xxxxxxxxxxxxxxxx Xxxxxxxxxxxxxxxx") );
 /*????*/
         driver.findElement( By.id("rafael")).click();
 
@@ -114,7 +114,7 @@ System.out.println ( "________________________Verify that you are logged out____
         String expectedUrl2 = "http://duotifyapp.us-east-2.elasticbeanstalk.com/register.php";
         assertEquals( currentUrl2, expectedUrl2 );
 
-System.out.println ( "_________________________Login using the same username___________________________    done ");
+System.out.println ( "_________________________Login using the same username____________________________   done ");
 /*10.  Login using the same username and password when you signed up.*/
 
          driver.findElement ( By.name("loginUsername")).sendKeys(userName);
@@ -122,16 +122,16 @@ System.out.println ( "_________________________Login using the same username____
          driver.findElement ( By.name("loginPassword")).sendKeys(password);
 
          driver.findElement ( By.name("loginButton")).click ();
-System.out.println ( "___________________________Verify successful login_______________________________    done " );
+System.out.println ( "___________________________Verify successful login________________________________   done " );
 /* 11. Verify successful login by verifying that the home page contains the text "You Might Also Like". */
 
+         driver.getPageSource().contains("You Might Also Like");
+       // assertTrue (HTMLCode.contains ("You Might Also Like" ) );
 
-        assertTrue (HTMLCode.contains (" You Might Also Like " ) );
-
-System.out.println ( "________________________________Log out__________________________________________    done " );
+System.out.println ( "____________________________________Log out_______________________________________   done " );
 /* 12. Log out once again and verify that you are logged out.*/
 /*????*/
-
+        driver.findElement ( By.id("nameFirstAndLast")).click();
         driver.findElement( By.id("rafael")).click();
         assertTrue(driver.getTitle().equals ("Welcome to Duotify!" ));
 
