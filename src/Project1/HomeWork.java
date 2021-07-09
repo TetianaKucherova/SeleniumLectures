@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.*;
 
 
@@ -14,6 +17,7 @@ public class HomeWork {
 /*1.    Navigate to http://duotifyapp.us-east-2.elasticbeanstalk.com/register.php*/
         System.setProperty ( "webdriver.chrome.driver", "C:\\Users\\PC\\Documents\\selenium browser\\chromedriver.exe" );
         WebDriver driver = new ChromeDriver ( ); // launches a new browser session
+         driver.manage ().timeouts ().implicitlyWait ( 5, TimeUnit.SECONDS );
         driver.get ( "http://duotifyapp.us-east-2.elasticbeanstalk.com/register.php" );//navigate to a URL
         String currentUrl = driver.getCurrentUrl ( );//retrieves the current URL
 
@@ -42,21 +46,21 @@ System.out.println ( "______________________________________Signup______________
 System.out.println ( "_________________________________Fill out the form _______________________________   done "    );
 /*4.     Fill out the form with the required info*/
 
-         String userName="xxxxxxxxx";
+         String userName="xxxxxxxxxx";
          WebElement inputBox = driver.findElement ( By.name("username"));
          inputBox.sendKeys(userName);
 
-         String firstName="xxxxxxxxx";
+         String firstName="xxxxxxxxxx";
          driver.findElement ( By.name("firstName")).sendKeys(firstName);
 
-         String lastName="xxxxxxxxx";
+         String lastName="xxxxxxxxxx";
          driver.findElement ( By.name("lastName")).sendKeys(lastName);
 
 
-         String email="xxxxx@gmail.com";
+         String email="xxxxxx@gmail.com";
          driver.findElement ( By.name("email")).sendKeys(email);
 
-         String email2="xxxxx@gmail.com";
+         String email2="xxxxxx@gmail.com";
          driver.findElement ( By.name("email2")).sendKeys(email2);
 
          String password="123tK56789";
@@ -85,7 +89,7 @@ System.out.println ( "_________________verify that your first and last name matc
 /*7.    In the left navigation bar, verify that your first and last name matches the first and last name that you used when signing up. */
 
         String HTMLCode= driver.getPageSource();
-        assertTrue (HTMLCode.contains ("Xxxxxxxxx Xxxxxxxxx") );
+        assertTrue (HTMLCode.contains ("Xxxxxxxxxx Xxxxxxxxxx") );
 
 
 System.out.println ( "_____________________username on the main window is correct_______________________   done ");
@@ -96,9 +100,10 @@ System.out.println ( "_____________________username on the main window is correc
 /*????driver.findElement ( By.tagName ( "h1" ) ).getText ( );
         WebElement h2 = driver.findElement( By.className ("section-header"));
         System.out.println (h2.getText() );*/
-        assertTrue (HTMLCode.contains ("Xxxxxxxxx Xxxxxxxxx") );
+        assertTrue (HTMLCode.contains ("Xxxxxxxxxx Xxxxxxxxxx") );
 /*????*/
         driver.findElement( By.id("rafael")).click();
+
         assertTrue(driver.getTitle().equals ("Welcome to Duotify!" ));
 
 System.out.println ( "________________________Verify that you are logged out____________________________   done ");
