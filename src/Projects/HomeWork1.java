@@ -1,4 +1,4 @@
-package Project1;
+package Projects;
 
 
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ import static org.testng.Assert.*;
 
 
 
-public class HomeWork {
+public class HomeWork1 {
     public static void main ( String[] args ) {
 /*1.    Navigate to http://duotifyapp.us-east-2.elasticbeanstalk.com/register.php*/
         System.setProperty ( "webdriver.chrome.driver", "C:\\Users\\PC\\Documents\\selenium browser\\chromedriver.exe" );
